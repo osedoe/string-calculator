@@ -1,22 +1,18 @@
-export const add = (value: string): number[] => {
-  const result = parseInt(value);
-  if (isNaN(result)) {
-    return [];
+const toNumber = (acc: number[], character: string) => {
+  const currentNumber = Number(character);
+  if (Boolean(currentNumber)) {
+    acc.push(currentNumber);
   }
 
-  return [result];
+  return acc;
 };
-/** 
+
 export const add = (value: string): number[] => {
-  
   if (value === '') {
     return [];
   }
-  const result = parseInt(value);
-  if (isNaN(result)) {
-    return [];
-  }
 
-  return [result];
+  const characters = value.split(',');
+
+  return characters.reduce(toNumber, []);
 };
-*/
