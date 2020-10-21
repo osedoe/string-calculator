@@ -1,5 +1,22 @@
 export const add = (value: string): number[] => {
-  return [parseInt(value)];
-};
+  const result = parseInt(value);
+  if (isNaN(result)) {
+    return [];
+  }
 
-add('2'); // [2]
+  return [result];
+};
+/** 
+export const add = (value: string): number[] => {
+  
+  if (value === '') {
+    return [];
+  }
+  const result = parseInt(value);
+  if (isNaN(result)) {
+    return [];
+  }
+
+  return [result];
+};
+*/
