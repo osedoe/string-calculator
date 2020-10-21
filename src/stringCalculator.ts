@@ -8,11 +8,8 @@ const toNumber = (acc: number[], character: string) => {
 };
 
 export const add = (value: string): number[] => {
-  if (value === '') {
-    return [];
-  }
-
-  const characters = value.split(',');
-
-  return characters.reduce(toNumber, []);
+  return (value ?? '')
+    .split(',')
+    .reduce(toNumber, []);
 };
+
